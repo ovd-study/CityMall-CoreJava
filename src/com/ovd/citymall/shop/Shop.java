@@ -20,11 +20,11 @@ public class Shop {
 	public void displayMenu(ShopCategory shopCategory) {
 		this.shopCategory = shopCategory;
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Welcome to " + name + "!");
-		System.out.println("List of Departments:");
+		System.out.println("\nWelcome to " + name + "!");
+		System.out.println("\nList of Departments:");
 
 		for (int i = 0; i < departmentList.size(); i++) {
-			System.out.println((i + 1) + ". " + departmentList.get(i).getName());
+			System.out.println("  " + (i + 1) + ". " + departmentList.get(i).getName());
 		}
 		System.out.println("\n X - to go back");
 
@@ -34,7 +34,7 @@ public class Shop {
 		if (MyUtils.isInt(userSelection)) {
 			int userSelectionInt = Integer.parseInt(userSelection);
 			if (userSelectionInt <= departmentList.size()) {
-				departmentList.get(userSelectionInt-1).displayMenu(this);
+				departmentList.get(userSelectionInt - 1).displayMenu(this);
 			}
 		} else {
 			if ("X".equalsIgnoreCase(userSelection)) {

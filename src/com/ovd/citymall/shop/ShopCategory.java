@@ -40,11 +40,11 @@ public class ShopCategory {
 	public void displayMenu(Mall mall) {
 		this.mall = mall;
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Welcome to " + name + "!");
-		System.out.println("List of Shop:");
+		System.out.println("\nWelcome to " + name + "!");
+		System.out.println("\nList of Shop:");
 
 		for (int i = 0; i < shopList.size(); i++) {
-			System.out.println((i + 1) + ". " + shopList.get(i).getName());
+			System.out.println("  " + (i + 1) + ". " + shopList.get(i).getName());
 		}
 		System.out.println("\n X - to go back");
 
@@ -54,7 +54,7 @@ public class ShopCategory {
 		if (MyUtils.isInt(userSelection)) {
 			int userSelectionInt = Integer.parseInt(userSelection);
 			if (userSelectionInt <= shopList.size()) {
-				shopList.get(userSelectionInt-1).displayMenu(this);
+				shopList.get(userSelectionInt - 1).displayMenu(this);
 			}
 		} else {
 			if ("X".equalsIgnoreCase(userSelection)) {

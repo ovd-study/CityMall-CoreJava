@@ -92,11 +92,11 @@ public class Department {
 	public void displayMenu(Shop shop) {
 		this.shop = shop;
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Welcome to " + name + "!");
-		System.out.println("List of Items:");
+		System.out.println("\nWelcome to " + name + "!");
+		System.out.println("\nList of Items:");
 
 		for (int i = 0; i < itemList.size(); i++) {
-			System.out.println((i + 1) + ". " + itemList.get(i).getName());
+			System.out.println("  " + (i + 1) + ". " + itemList.get(i).getName());
 		}
 		System.out.println("\n X - to go back");
 
@@ -106,7 +106,7 @@ public class Department {
 		if (MyUtils.isInt(userSelection)) {
 			int userSelectionInt = Integer.parseInt(userSelection);
 			if (userSelectionInt <= itemList.size()) {
-				itemList.get(userSelectionInt-1).displayMenu(this);
+				itemList.get(userSelectionInt - 1).displayMenu(this);
 			}
 		} else {
 			if ("X".equalsIgnoreCase(userSelection)) {

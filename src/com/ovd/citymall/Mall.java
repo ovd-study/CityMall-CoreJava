@@ -26,11 +26,11 @@ public class Mall {
 	public void displayMenu(App app) {
 		this.app = app;
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Welcome to " + name + "!");
-		System.out.println("List of Shop Categories:");
+		System.out.println("\nWelcome to " + name + "!");
+		System.out.println("\nList of Shop Categories:");
 
 		for (int i = 0; i < categoryList.size(); i++) {
-			System.out.println((i + 1) + ". " + categoryList.get(i).getName());
+			System.out.println("  " + (i + 1) + ". " + categoryList.get(i).getName());
 		}
 		System.out.println("\n X - to go back");
 
@@ -40,7 +40,7 @@ public class Mall {
 		if (MyUtils.isInt(userSelection)) {
 			int userSelectionInt = Integer.parseInt(userSelection);
 			if (userSelectionInt <= categoryList.size()) {
-				categoryList.get(userSelectionInt-1).displayMenu(this);
+				categoryList.get(userSelectionInt - 1).displayMenu(this);
 			}
 		} else {
 			if ("X".equalsIgnoreCase(userSelection)) {
