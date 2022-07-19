@@ -6,6 +6,9 @@ import java.util.Scanner;
 import com.ovd.citymall.MyUtils;
 
 public class Shop {
+	public static final String ANSI_RESET = "\u001B[0m";
+	public static final String ANSI_GREEN = "\u001B[32m";
+	public static final String ANSI_BLUE   = "\u001B[34m";
 	String name;
 	int contactNumber;
 	String website;
@@ -20,13 +23,13 @@ public class Shop {
 	public void displayMenu(ShopCategory shopCategory) {
 		this.shopCategory = shopCategory;
 		Scanner scan = new Scanner(System.in);
-		System.out.println("\nWelcome to " + name + "!");
-		System.out.println("\nList of Departments:");
+		System.out.println(ANSI_GREEN + "\nWelcome to " + name + "!"+ ANSI_RESET);
+		System.out.println(ANSI_BLUE + "\nList of Departments:");
 
 		for (int i = 0; i < departmentList.size(); i++) {
 			System.out.println("  " + (i + 1) + ". " + departmentList.get(i).getName());
 		}
-		System.out.println("\n X - to go back");
+		System.out.println("\n X - to go back" + ANSI_RESET);
 
 		System.out.println("");
 		System.out.println("Please select a number corresponding Shop you want to enter: ");
