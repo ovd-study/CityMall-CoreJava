@@ -8,8 +8,8 @@ public class BookShop extends Shop {
 	}
 
 	private void init() {
-		departmentList.add(new Department("Fiction"));
-		departmentList.add(new Department("Non-Fiction"));
-		departmentList.add(new Department("Educational"));
+		departmentList.add(new Department("Miscellaneous"));
+		departmentList.add(new Department("Graphic Novels"));
+		departmentList.add(new Department("Light Novels"));
 	}
 }
