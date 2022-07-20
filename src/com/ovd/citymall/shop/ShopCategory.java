@@ -7,6 +7,9 @@ import com.ovd.citymall.Mall;
 import com.ovd.citymall.MyUtils;
 
 public class ShopCategory {
+	public static final String ANSI_RESET = "\u001B[0m";
+	public static final String ANSI_GREEN = "\u001B[32m";
+	public static final String ANSI_BLUE   = "\u001B[34m";
 	String name;
 	ArrayList<Shop> shopList = new ArrayList<Shop>();
 	Mall mall;
@@ -40,13 +43,13 @@ public class ShopCategory {
 	public void displayMenu(Mall mall) {
 		this.mall = mall;
 		Scanner scan = new Scanner(System.in);
-		System.out.println("\nWelcome to " + name + "!");
-		System.out.println("\nList of Shop:");
+		System.out.println(ANSI_GREEN + "\nWelcome to " + name + "!"+ ANSI_RESET);
+		System.out.println(ANSI_BLUE + "\nList of Shop:");
 
 		for (int i = 0; i < shopList.size(); i++) {
 			System.out.println("  " + (i + 1) + ". " + shopList.get(i).getName());
 		}
-		System.out.println("\n X - to go back");
+		System.out.println("\n X - to go back" + ANSI_RESET);
 
 		System.out.println("");
 		System.out.print("Please select a number corresponding Shop you want to enter: ");
