@@ -3,7 +3,7 @@ package com.ovd.citymall;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class App extends Object{
+public class App extends Object {
 	ArrayList<Mall> mallList = new ArrayList<Mall>();;
 
 	public App() {
@@ -18,19 +18,19 @@ public class App extends Object{
 	public void displayMenu() {
 		Scanner scan = new Scanner(System.in);
 
-		System.out.println("List of Malls");
+		System.out.println("List of Malls \n");
 
 		for (int i = 0; i < mallList.size(); i++) {
-			System.out.print((i + 1) + ". " + mallList.get(i).getName());
+			System.out.print("  " + (i + 1) + ". " + mallList.get(i).getName());
 		}
 
 		System.out.println("");
-		System.out.print("Please select a number corresponding Mall you want to enter: ");
+		System.out.print("\nPlease select a number corresponding Mall you want to enter: ");
 		String userSelection = scan.nextLine();
 		if (MyUtils.isInt(userSelection)) {
 			int userSelectionInt = Integer.parseInt(userSelection);
 			if (userSelectionInt <= mallList.size()) {
-				mallList.get(userSelectionInt-1).displayMenu(this);
+				mallList.get(userSelectionInt - 1).displayMenu(this);
 			}
 		} else {
 			if ("X".equalsIgnoreCase(userSelection)) {
